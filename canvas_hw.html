@@ -10,10 +10,10 @@
     </style>
   </head>
   <body>
-<canvas id="canvas" width="500" height="500"> An alternative text describing what your canvas displays.</canvas>
+<canvas id="canvas" width="1350" height="600"> An alternative text describing what your canvas displays.</canvas>
 
 <form>
-<input type = "color" value = "#000000" id = "colorpicker">
+<input type = "color" id = "colorpicker">
 </form>
 
 <script>
@@ -78,10 +78,8 @@ window.addEventListener('keyup', function (e) {
 
 // Colorpicker
 var color_id = document.querySelector("#colorpicker");
-var color_hex = color_id.value;
-console.log(color_hex)
 color_id.addEventListener('input', function(e){
-  color = color_hex;
+  color = e.target.value;
 });
 
 
@@ -104,13 +102,13 @@ window.addEventListener('keydown', function (e) {
 window.addEventListener('keydown', function (e) {
   console.log(e.keyCode);
   if (e.keyCode == 32){
-   ctx.clearRect(0, 0, 500, 500);
+   ctx.clearRect(0, 0, 1350, 600);
  }
   draw();
 })
 
 window.addEventListener('orientationchange', function (e){
-  ctx.clearRect(0, 0, 500, 500);
+  ctx.clearRect(0, 0, 1350, 600);
 })
 
 </script>
