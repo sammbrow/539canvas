@@ -9,7 +9,7 @@
       }
     </style>
   </head>
-  <body>
+  <body onresize="screenchange()">
 <canvas id="canvas" width="1350" height="600"> An alternative text describing what your canvas displays.</canvas>
 
 <form>
@@ -111,11 +111,18 @@ window.addEventListener('orientationchange', function (e){
   ctx.clearRect(0, 0, 1350, 600);
 })
 
+function screenchange(){
+if (screen.width <= 600){
+  canvas.height = "1000";
+  canvas.width = "600";
+  console.log("working!");
+} else {
+  canvas.width = "1350";
+  canvas.height = "600";
+  console.log("works");
+}}
 
-if (window.matchMedia("(max-width: 500)")){
-  canvas.height = 1000;
-  canvas.width = 600;
-}
+
 </script>
 
 </body>
