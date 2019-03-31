@@ -111,6 +111,11 @@ window.addEventListener('orientationchange', function (e){
   ctx.clearRect(0, 0, 1350, 600);
 })
 
+
+if (window.matchMedia("(max-width: 500)")){
+  canvas.height = 600;
+  canvas.width = 300;
+}
 </script>
 
 </body>
